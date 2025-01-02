@@ -1,7 +1,7 @@
 <template>
 
   <div class="flex items-center">
-    <a href="/resume.pdf" download="Resume Zaheer, Farzan">Download CV</a>
+    <a href="/resume.pdf" download="Resume_Farzan_Zaheer.pdf">Download CV</a>
     <a href="https://github.com/FarzanZaheer">
       <img alt="github logo" src="../assets/github.svg">
     </a>
