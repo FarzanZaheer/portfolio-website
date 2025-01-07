@@ -44,6 +44,7 @@
       }),
     });
     const result = await response.json()
+    console.log('res', result)
     if (result.success) {
       console.log(result)
     }
