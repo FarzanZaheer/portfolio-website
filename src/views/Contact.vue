@@ -1,22 +1,23 @@
 <template>
-  <!-- <form @submit.prevent="submitForm"> -->
-    <!-- <div class=""> -->
-      <div class="my-4">
-        <InputText class="grow" type="text" name="name" v-model="name"/>
-      </div>
-      <div class="my-4">
-        <InputText class="grow" type="email" name="email"  v-model="email"/>
-      </div>
-      <div class="my-4">
-        <Textarea class="grow" v-model="message" rows="5" cols="30" />
-      </div>
-      <div class="my-4">
-        <Button @click="submitForm">Send Message</Button>
-      </div>
-      
-    <!-- </div> -->
-    
-  <!-- </form> -->
+  <div class="contact-form">
+    <div class="g-recaptcha" data-sitekey="6Ld0qrAqAAAAAK1WBfXYMN1f2JM-drjKBInGxJBu"></div> <!-- replace with your recaptcha SITE key not secret key -->
+    <div>Contact</div>
+    <div class="my-4">
+      <div>Full Name</div>
+      <InputText size="large" class="grow" type="text" name="name" v-model="name"/>
+    </div>
+    <div class="my-4">
+      <div>Email</div>
+      <InputText size="large" class="grow" type="email" name="email"  v-model="email"/>
+    </div>
+    <div class="my-4">
+      <div>Message</div>
+      <Textarea size="large" class="grow" v-model="message" rows="5" cols="30" />
+    </div>
+    <div class="my-4">
+      <Button @click="submitForm">Send Message</Button>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -25,22 +26,18 @@
   import Button from 'primevue/button'
   import Textarea from 'primevue/textarea'
 
-
-  const WEB3FORMS_ACCESS_KEY = "de5ccc21-c7f1-4822-a2d1-6ccd0b26ea12";
-
   const name = ref('')
   const email = ref('')
   const message = ref('')
 
   const submitForm = async () => {
-    const response = await fetch("https://api.web3forms.com/submit", {
+    const response = await fetch("https://formspree.io/f/xnnnoonl", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       body: JSON.stringify({
-        access_key: WEB3FORMS_ACCESS_KEY,
         name: name.value,
         email: email.value,
         message: message.value,

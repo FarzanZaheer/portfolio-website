@@ -1,11 +1,11 @@
 
 <template>
-
-    <!-- <div class="wrapper"> -->
-      <Navbar />
-    <!-- </div> -->
-
-  <RouterView />
+  <div class="app-container m-6 p-6">
+    <Navbar />
+    <div class="view-container m-6 p-6">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
